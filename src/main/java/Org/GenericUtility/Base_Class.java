@@ -23,6 +23,8 @@ import Org_RMB_ObjectRepository.DeleteCustomerPage;
 import Org_RMB_ObjectRepository.IBRegistrationPage;
 import Org_RMB_ObjectRepository.OpenAccountPage;
 import Org_RMB_ObjectRepository.StaffLoginPage;
+import Org_RMB_ObjectRepository.ViewActiveCustomerPage;
+import Org_RMB_ObjectRepository.ViewCustomerByAccNoPage;
 
 public class Base_Class 
 {
@@ -46,6 +48,8 @@ public class Base_Class
 	protected CreditCustomerPage creditCustomerPage;
 	protected DeleteCustomerPage deleteCustomerPage;
 	protected IBRegistrationPage ibRegistrationPage;
+	protected ViewActiveCustomerPage viewActiveCustomerPage;
+	protected ViewCustomerByAccNoPage viewCustomerByAccNoPage;
 
 
 	@BeforeSuite
@@ -98,6 +102,8 @@ public class Base_Class
 		creditCustomerPage = new CreditCustomerPage(driver);
 		deleteCustomerPage = new DeleteCustomerPage(driver);
 		ibRegistrationPage = new IBRegistrationPage(driver);
+		viewActiveCustomerPage = new ViewActiveCustomerPage(driver);
+		viewCustomerByAccNoPage = new ViewCustomerByAccNoPage(driver);
 		Reporter.log("BeforeMethod Executed", true);
 	}
 

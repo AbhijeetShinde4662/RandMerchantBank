@@ -27,7 +27,7 @@ public class DeleteCustomerPage
 	}
 	
 	
-	public void delete(String number, String Id, String reason) throws InterruptedException 
+	public void delete(String number, String Id, String reason) 
 	{
 		accountNumberTextField.sendKeys(number);
 	
