@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Org.GenericUtility.ListenerImplementation"/>
+    <listener class-name="Org.GenericUtility.RetryToListener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="Org_Automation_Test_NG.CreditCustomerTest">
+        <methods>
+          <include name="Testcase10"/>
+          <include name="Testcase1"/>
+          <include name="Testcase3"/>
+          <include name="Testcase5"/>
+          <include name="OpenAccountTest"/>
+          <include name="Testcase2"/>
+          <include name="Testcase7"/>
+          <include name="Testcase9"/>
+          <include name="Testcase8"/>
+        </methods>
+      </class> <!-- Org_Automation_Test_NG.CreditCustomerTest -->
+      <class name="Org_Automation_Test_NG.DeleteCustomerTest">
+        <methods>
+          <include name="Testcase10"/>
+          <include name="Testcase1"/>
+          <include name="Testcase3"/>
+          <include name="Testcase5"/>
+          <include name="deleteCustomer"/>
+          <include name="Testcase2"/>
+          <include name="Testcase7"/>
+          <include name="Testcase9"/>
+          <include name="Testcase8"/>
+        </methods>
+      </class> <!-- Org_Automation_Test_NG.DeleteCustomerTest -->
+      <class name="Org_Automation_Test_NG.DebitCardTest">
+        <methods>
+          <include name="Testcase10"/>
+          <include name="Testcase1"/>
+          <include name="Testcase3"/>
+          <include name="Testcase5"/>
+          <include name="Testcase2"/>
+          <include name="Testcase7"/>
+          <include name="Testcase9"/>
+          <include name="debitCard"/>
+          <include name="Testcase8"/>
+        </methods>
+      </class> <!-- Org_Automation_Test_NG.DebitCardTest -->
+      <class name="Org_Automation_Test_NG.AccountOpeningTest">
+        <methods>
+          <include name="accountOpening"/>
+          <include name="Testcase10"/>
+          <include name="Testcase1"/>
+          <include name="Testcase3"/>
+          <include name="Testcase5"/>
+          <include name="Testcase2"/>
+          <include name="Testcase7"/>
+          <include name="Testcase9"/>
+          <include name="Testcase8"/>
+        </methods>
+      </class> <!-- Org_Automation_Test_NG.AccountOpeningTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
