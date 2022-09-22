@@ -67,9 +67,6 @@ public class Base_Class
 	@BeforeClass
 	public void Testcase2() throws IOException
 	{
-
-
-
 		fetchDataFromProperties = new FetchDataFromProperties();
 		fetchDataFromExcel = new FetchDataFromExcel();
 		webDriverUtility = new WebDriverUtility();
@@ -113,6 +110,7 @@ public class Base_Class
 	@AfterMethod
 	public void Testcase7()
 	{
+		adminCommonAction.adminLogoutButton();
 		webDriverUtility.closeBrowser(driver);
 		Reporter.log("AfterMethod Executed", true);
 	}

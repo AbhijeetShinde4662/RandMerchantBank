@@ -21,7 +21,6 @@ public class ViewCustomerByAccNoPage {
 		viewCustomerByAccNoLink.click();;
 	}
 	public void ViewCustomerByAccNoMethod(String AccountNo) {
-		viewCustomerByAccNoLink.click();
 		viewCustomerAccTextField.sendKeys(AccountNo);
 		submitButton.click();
 	}

@@ -38,7 +38,6 @@ public class Open_ApproveandVerifyInActiveCustomer_Test extends Base_Class {
 		int count = viewActiveCustomerPage.CheckDataInViewCustomerPage(driver, accno, columnElements, ColumnElements.ACCOUNTNO);
 		javaUtility.AssertionCheckTrue(count==1);
 		adminCommonAction.adminHomeButton();
-		adminCommonAction.adminLogoutButton();
 	}
 
 }
