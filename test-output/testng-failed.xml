@@ -3,11 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Org_Automation_Test_NG.MavenPratctice1Test">
+      <class name="org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test">
         <methods>
-          <include name="sample"/>
+          <include name="Testcase10"/>
+          <include name="Testcase1"/>
+          <include name="TestCase1"/>
+          <include name="Testcase3"/>
+          <include name="Testcase5"/>
+          <include name="Testcase2"/>
+          <include name="Testcase7"/>
+          <include name="Testcase9"/>
+          <include name="Testcase8"/>
         </methods>
-      </class> <!-- Org_Automation_Test_NG.MavenPratctice1Test -->
+      </class> <!-- org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
