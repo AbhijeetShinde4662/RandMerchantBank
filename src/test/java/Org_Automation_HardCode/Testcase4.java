@@ -1,15 +1,9 @@
-package Org_Automation_Rmb;
+package Org_Automation_HardCode;
 
-import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.io.FileInputStream;
 import java.time.Duration;
-import java.util.Properties;
 
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,10 +14,9 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Testcase1 {
-		static WebDriver driver=null;
-	public static void main(String[] args) throws InterruptedException, AWTException, Throwable
-	{
+public class Testcase4 {
+	  static WebDriver driver=null;
+	  public static void main(String[] args) throws InterruptedException, Throwable {
 		String browser="Firefox";
 		if(browser.equalsIgnoreCase("firefox"))
 		{
@@ -36,33 +29,11 @@ public class Testcase1 {
 		    driver = new ChromeDriver();	
 		}
 		driver.manage().window().maximize();
+		driver.get("http://rmgtestingserver/domain/Online_Banking_System/");
+	
 		
-		FileInputStream fis=new FileInputStream("./src/test/resources/CommonData.properties");
-		Properties prop = new Properties();
-		prop.load(fis);
-		String url = prop.getProperty("url");
-		String staffid = prop.getProperty("StaffId");
-		String password = prop.getProperty("Password");
-		
-		
-		FileInputStream fiss= new FileInputStream("");
-		Workbook book = WorkbookFactory.create(fiss);
-		Sheet sheet = book.getSheet("");
-		String name = sheet.getRow(0).getCell(1).getStringCellValue();
-		String mob = sheet.getRow(0).getCell(1).getStringCellValue();
-		String email = sheet.getRow(0).getCell(1).getStringCellValue();
-		String pancard = sheet.getRow(0).getCell(1).getStringCellValue();
-		String citizenship = sheet.getRow(0).getCell(1).getStringCellValue();
-		String homeads = sheet.getRow(0).getCell(1).getStringCellValue();
-		String pincode = sheet.getRow(0).getCell(1).getStringCellValue();
-		String arealoc = sheet.getRow(0).getCell(1).getStringCellValue();
-		
-		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(By.xpath("//li[text()='Open Account']")).click();
-		
-		
-		
 		driver.findElement(By.name("name")).sendKeys("haris");
 		WebElement gender = driver.findElement(By.name("gender"));
 		Select sg = new Select(gender);
@@ -108,10 +79,7 @@ public class Testcase1 {
 		driver.findElement(By.xpath("//input[@name='submit']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@name='cnfrm-submit']")).click();
-		
-		
 		String text = driver.switchTo().alert().getText();
-		
 		System.out.println(text);
 		String appno = "";
 		for(int i=0; i<text.length(); i++) 
@@ -124,8 +92,8 @@ public class Testcase1 {
 		Thread.sleep(3000);
 		driver.switchTo().alert().accept();
 		driver.findElement(By.linkText("Staff Login")).click();
-		driver.findElement(By.name("staff_id")).sendKeys(staffid);
-		driver.findElement(By.name("password")).sendKeys(password);
+		driver.findElement(By.name("staff_id")).sendKeys("210001");
+		driver.findElement(By.name("password")).sendKeys("password");
 		driver.findElement(By.name("staff_login-btn")).click();
 		driver.findElement(By.name("apprvac")).click();
 		driver.findElement(By.name("application_no")).sendKeys(appno);
@@ -135,14 +103,41 @@ public class Testcase1 {
 		String accountNo = accno.getText();
 		System.out.println(accountNo);
 		accno.accept();
-		
-		
-		
-		if(accountNo.contains("Account Created Successfully"))
+		String appno1 = "";
+		String cusId = "";
+		for(int i=0; i<accountNo.length(); i++) 
 		{
-			System.out.println("Testcase1 passed and account created successfully");
+			if(accountNo.charAt(i)>='0'&& accountNo.charAt(i)<='9') {
+				appno1 = appno1 + text.charAt(i);
+			}
+			for(int j =0; i<appno1.length(); j++) {
+				if(j<=11) {
+					cusId = cusId + appno1.charAt(j);
 		}
+			
+		System.out.println(appno1);
+		Thread.sleep(2000);
+		driver.findElement(By.name("home")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.name("del_cust")).click();
+		driver.findElement(By.name("Cust_ac_no")).sendKeys(appno1);
+		driver.findElement(By.name("Cust_ac_Id")).sendKeys(cusId);
+		driver.findElement(By.name("reason")).sendKeys("SuspectList");
+		driver.findElement(By.name("delete")).click();
+		Alert deleteAC = driver.switchTo().alert();
+		String deletepopup = deleteAC.getText();
+		deleteAC.accept();
+		System.out.println(deletepopup);
+		driver.findElement(By.name("logout_btn")).click();
+		driver.findElement(By.linkText("Home")).click();
+	
+			}
+			}
 		driver.quit();
-	}
 
-}
+		
+	
+		
+		
+		}
+	  }

@@ -1,4 +1,4 @@
-package Org_Automation_Rmb;
+package Org_Automation_POM;
 
 import java.awt.AWTException;
 import java.time.Duration;

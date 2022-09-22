@@ -1,4 +1,4 @@
-package Org_Automation_Rmb;
+package Org_Automation_DataDriven;
 
 import java.awt.AWTException;
 import java.awt.Robot;

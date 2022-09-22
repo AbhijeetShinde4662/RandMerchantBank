@@ -1,4 +1,4 @@
-package Org_Automation_Test_NG;
+package Org.TestNG.Practice;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;

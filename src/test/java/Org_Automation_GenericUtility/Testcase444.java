@@ -1,4 +1,4 @@
-package Org_Automation_Rmb;
+package Org_Automation_GenericUtility;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -20,25 +20,26 @@ import Org.GenericUtility.JavaUtility;
 import Org.GenericUtility.WebDriverUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Testcase333 
+public class Testcase444
 {
-	
+
 	public static void main(String[] args) throws InterruptedException, AWTException, Throwable
 	{
 		FetchDataFromProperties fetchDataFromProperties = new FetchDataFromProperties();
 		FetchDataFromExcel fetchDataFromExcel = new FetchDataFromExcel();
 		WebDriverUtility webDriverUtility = new WebDriverUtility();
-		JavaUtility javaUtility = new  JavaUtility();
-		
+		JavaUtility javaUtility = new  JavaUtility();	
+
 		//Data from PropertyFile
 		String url = fetchDataFromProperties.getDataFromProperty("url");
 		String staffid =fetchDataFromProperties.getDataFromProperty("StaffId");
 		String password =fetchDataFromProperties.getDataFromProperty("Password");
-		
-		
-		
+
+
+
 		//Data from ExcelSheet
-		int i=4;
+		int i=5;
+		
 		String name = fetchDataFromExcel.getDataFromExcel("Sheet1", i, 0);
 		String mob = fetchDataFromExcel.getDataFromExcel("Sheet1", i, 1);
 		String email =  fetchDataFromExcel.getDataFromExcel("Sheet1", i, 2);
@@ -51,34 +52,32 @@ public class Testcase333
 		String locality =  fetchDataFromExcel.getDataFromExcel("Sheet1", i, 9);
 		String nomename =  fetchDataFromExcel.getDataFromExcel("Sheet1", i, 10);
 		String nimaccnt =  fetchDataFromExcel.getDataFromExcel("Sheet1", i, 11);
-		String dob1 =  fetchDataFromExcel.getDataFromExcel("Sheet1", i, 12);
-		System.out.println(dob1);
-	
+		
+
 		WebDriver driver = webDriverUtility.openAndLaunchBrowser("Chrome", url);
 
-		
-		
-		
+
+
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 
 		driver.findElement(By.xpath("//li[text()='Open Account']")).click();
-//		driver.findElement(By.name("name")).sendKeys(name);
-//		driver.findElement(By.name("mobile")).sendKeys(mob);
-//		driver.findElement(By.name("email")).sendKeys(email);
-//		
-//		driver.findElement(By.name("pan_no")).sendKeys(pancard);
-//		driver.findElement(By.name("citizenship")).sendKeys(citizenship);
-//		driver.findElement(By.name("homeaddrs")).sendKeys(homeads);
-//		driver.findElement(By.name("pin")).sendKeys(pincode);
-//		driver.findElement(By.name("arealoc")).sendKeys(locality);
+		driver.findElement(By.name("name")).sendKeys(name);
+		driver.findElement(By.name("mobile")).sendKeys(mob);
+		driver.findElement(By.name("email")).sendKeys(email);
+
+		driver.findElement(By.name("pan_no")).sendKeys(pancard);
+		driver.findElement(By.name("citizenship")).sendKeys(citizenship);
+		driver.findElement(By.name("homeaddrs")).sendKeys(homeads);
+		driver.findElement(By.name("pin")).sendKeys(pincode);
+		driver.findElement(By.name("arealoc")).sendKeys(locality);
 		
-		WebElement dob = driver.findElement(By.xpath("//input[@name='dob']"));
-		 dob.click();
-		 dob.sendKeys(dob1);
-		 
-		 
-/*
+//		 WebElement dob = driver.findElement(By.xpath("//input[@name='dob']"));
+//		 dob.click();
+//		 dob.sendKeys("10-12-1993");
+	
+		
 		driver.findElement(By.xpath("//input[@name='dob']")).click();
 		driver.findElement(By.xpath("//input[@name='dob']")).click();
 		Robot rbt= new Robot();
@@ -118,10 +117,10 @@ public class Testcase333
 		driver.findElement(By.xpath("//input[@name='cnfrm-submit']")).click();
 
 		String alertmessage = webDriverUtility.alertHandle(driver);
-		
-		
-		
-		
+
+
+
+
 		String aplctnno=javaUtility.fetchNumFromAlert(alertmessage);
 
 		System.out.println(aplctnno);
@@ -133,47 +132,52 @@ public class Testcase333
 		driver.findElement(By.name("staff_id")).sendKeys(staffid);
 		driver.findElement(By.name("password")).sendKeys(password);
 		driver.findElement(By.name("staff_login-btn")).click();
-	
+
 		driver.findElement(By.name("apprvac")).click();
-	
+
 		driver.findElement(By.name("application_no")).sendKeys(aplctnno);
 		Thread.sleep(2000);
 		driver.findElement(By.name("search_application")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.name("approve_cust")).click();
-		Thread.sleep(2000);
-		
-		
+		Thread.sleep(5000);
+
+
 		String alertmessage1 = webDriverUtility.alertHandle(driver);
-		
-		
+
+
 		System.out.println(alertmessage1);
-		
+
 		String accountnumber=javaUtility.fetchNumFromAlert(alertmessage1);
 
 		System.out.println(accountnumber);
 
-		
-		Thread.sleep(2000);
-		
-		
+		String cust_Id=javaUtility.FetchCustomerId(accountnumber);
+		System.out.println(cust_Id);
+
+
+
+
 		driver.findElement(By.xpath("//input[@name='home']")).click();
-		driver.findElement(By.xpath("//input[@name='credit_cust_ac']")).click();
-		driver.findElement(By.name("customer_account_no")).sendKeys(accountnumber);
-		driver.findElement(By.name("credit_amount")).sendKeys("1000");
-		driver.findElement(By.name("credit_btn")).click();
-		
+		driver.findElement(By.name("del_cust")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.name("Cust_ac_no")).sendKeys(accountnumber);
+		driver.findElement(By.name("Cust_ac_Id")).sendKeys(cust_Id);
+		driver.findElement(By.name("reason")).sendKeys("Suspect List");
+		Thread.sleep(2000);
+		driver.findElement(By.name("delete")).click();
+
 		String alertmessage11 = webDriverUtility.alertHandle(driver);
-	
-		if(alertmessage11.contains("Amount credited Successfully to customer account"))
+
+		if(alertmessage11.contains("Customer Deleted Successfully"))
 		{
-			System.out.println("Testcase333 passed and account created successfully");
+			System.out.println("Testcase444 passed and account created successfully");
 		}
 
 
 		driver.quit();
 
-*/
+
 	}
 
 }

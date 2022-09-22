@@ -1,4 +1,4 @@
-package Org_Automation_Rmb;
+package Org_Automation_HardCode;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
