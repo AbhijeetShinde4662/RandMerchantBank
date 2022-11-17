@@ -232,6 +232,10 @@ public class WebDriverUtility
 
 		driver.quit();
 	}
+	
+	public String GetCurrentPageTitleMethod(WebDriver driver) {
+		return driver.getTitle();
+	}
 
 
 

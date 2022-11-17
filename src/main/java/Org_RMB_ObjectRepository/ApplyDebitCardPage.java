@@ -32,7 +32,7 @@ public class ApplyDebitCardPage
 		PageFactory.initElements(driver, this);
 	}
 
-	public void applyDbCard(Map<String, String> map,String accountNumber) throws InterruptedException
+	public void applyDbCard(Map<String, String> map,String accountNumber) 
 	{
 		nameTextField.sendKeys(map.get("Name"));
 

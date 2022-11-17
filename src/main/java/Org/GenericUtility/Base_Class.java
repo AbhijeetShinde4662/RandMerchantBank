@@ -23,6 +23,8 @@ import Org_RMB_ObjectRepository.DeleteCustomerPage;
 import Org_RMB_ObjectRepository.IBRegistrationPage;
 import Org_RMB_ObjectRepository.OpenAccountPage;
 import Org_RMB_ObjectRepository.StaffLoginPage;
+import Org_RMB_ObjectRepository.ViewActiveCustomerPage;
+import Org_RMB_ObjectRepository.ViewCustomerByAccNoPage;
 
 public class Base_Class 
 {
@@ -46,6 +48,8 @@ public class Base_Class
 	protected CreditCustomerPage creditCustomerPage;
 	protected DeleteCustomerPage deleteCustomerPage;
 	protected IBRegistrationPage ibRegistrationPage;
+	protected ViewActiveCustomerPage viewActiveCustomerPage;
+	protected ViewCustomerByAccNoPage viewCustomerByAccNoPage;
 
 
 	@BeforeSuite
@@ -63,9 +67,6 @@ public class Base_Class
 	@BeforeClass
 	public void Testcase2() throws IOException
 	{
-
-
-
 		fetchDataFromProperties = new FetchDataFromProperties();
 		fetchDataFromExcel = new FetchDataFromExcel();
 		webDriverUtility = new WebDriverUtility();
@@ -98,6 +99,8 @@ public class Base_Class
 		creditCustomerPage = new CreditCustomerPage(driver);
 		deleteCustomerPage = new DeleteCustomerPage(driver);
 		ibRegistrationPage = new IBRegistrationPage(driver);
+		viewActiveCustomerPage = new ViewActiveCustomerPage(driver);
+		viewCustomerByAccNoPage = new ViewCustomerByAccNoPage(driver);
 		Reporter.log("BeforeMethod Executed", true);
 	}
 
@@ -107,6 +110,7 @@ public class Base_Class
 	@AfterMethod
 	public void Testcase7()
 	{
+		adminCommonAction.adminLogoutButton();
 		webDriverUtility.closeBrowser(driver);
 		Reporter.log("AfterMethod Executed", true);
 	}

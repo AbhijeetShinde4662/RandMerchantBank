@@ -1,17 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[BeforeSuite Executed]]>
+    </line>
+    <line>
+      <![CDATA[BeforeTest Executed]]>
+    </line>
+    <line>
+      <![CDATA[BeforeClass Executed]]>
+    </line>
+    <line>
+      <![CDATA[BeforeMethod Executed]]>
+    </line>
+    <line>
+      <![CDATA[AfterMethod Executed]]>
+    </line>
+    <line>
+      <![CDATA[AfterClass Executed]]>
+    </line>
+    <line>
+      <![CDATA[AftreTest Executed]]>
+    </line>
+    <line>
+      <![CDATA[AftreSuite Executed]]>
+    </line>
   </reporter-output>
-  <suite started-at="2022-09-20T13:01:12 IST" name="Default suite" finished-at="2022-09-20T13:01:25 IST" duration-ms="12128">
+  <suite started-at="2022-09-22T10:53:01 IST" name="Default suite" finished-at="2022-09-22T10:53:30 IST" duration-ms="28520">
     <groups>
     </groups>
-    <test started-at="2022-09-20T13:01:12 IST" name="Default test" finished-at="2022-09-20T13:01:25 IST" duration-ms="12128">
-      <class name="Org_Automation_Test_NG.MavenPratctice1Test">
-        <test-method signature="sample()[pri:0, instance:Org_Automation_Test_NG.MavenPratctice1Test@66d3eec0]" started-at="2022-09-20T13:01:13 IST" name="sample" finished-at="2022-09-20T13:01:25 IST" duration-ms="12083" status="PASS">
+    <test started-at="2022-09-22T10:53:01 IST" name="Default test" finished-at="2022-09-22T10:53:30 IST" duration-ms="28520">
+      <class name="org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test">
+        <test-method is-config="true" signature="Testcase1()[pri:0, instance:org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test@1ca3b418]" started-at="2022-09-22T10:53:01 IST" name="Testcase1" finished-at="2022-09-22T10:53:01 IST" duration-ms="8" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[BeforeSuite Executed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Testcase1 -->
+        <test-method is-config="true" signature="Testcase3()[pri:0, instance:org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test@1ca3b418]" started-at="2022-09-22T10:53:01 IST" name="Testcase3" finished-at="2022-09-22T10:53:01 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[BeforeTest Executed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Testcase3 -->
+        <test-method is-config="true" signature="Testcase2()[pri:0, instance:org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test@1ca3b418]" started-at="2022-09-22T10:53:01 IST" name="Testcase2" finished-at="2022-09-22T10:53:02 IST" duration-ms="1125" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[BeforeClass Executed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Testcase2 -->
+        <test-method is-config="true" signature="Testcase5()[pri:0, instance:org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test@1ca3b418]" started-at="2022-09-22T10:53:02 IST" name="Testcase5" finished-at="2022-09-22T10:53:09 IST" duration-ms="6257" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[BeforeMethod Executed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Testcase5 -->
+        <test-method signature="TestCase1()[pri:0, instance:org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test@1ca3b418]" started-at="2022-09-22T10:53:09 IST" name="TestCase1" finished-at="2022-09-22T10:53:29 IST" duration-ms="20167" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sample -->
-      </class> <!-- Org_Automation_Test_NG.MavenPratctice1Test -->
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="Testcase7()[pri:0, instance:org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test@1ca3b418]" started-at="2022-09-22T10:53:29 IST" name="Testcase7" finished-at="2022-09-22T10:53:30 IST" duration-ms="928" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[AfterMethod Executed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Testcase7 -->
+        <test-method is-config="true" signature="Testcase9()[pri:0, instance:org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test@1ca3b418]" started-at="2022-09-22T10:53:30 IST" name="Testcase9" finished-at="2022-09-22T10:53:30 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[AfterClass Executed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Testcase9 -->
+        <test-method is-config="true" signature="Testcase8()[pri:0, instance:org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test@1ca3b418]" started-at="2022-09-22T10:53:30 IST" name="Testcase8" finished-at="2022-09-22T10:53:30 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[AftreTest Executed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Testcase8 -->
+        <test-method is-config="true" signature="Testcase10()[pri:0, instance:org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test@1ca3b418]" started-at="2022-09-22T10:53:30 IST" name="Testcase10" finished-at="2022-09-22T10:53:30 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[AftreSuite Executed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Testcase10 -->
+      </class> <!-- org.Thajudeen.RegSuite.Open_ApproveandVerifyInActiveCustomer_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
